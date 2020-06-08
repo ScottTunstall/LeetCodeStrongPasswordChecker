@@ -22,7 +22,7 @@ namespace LeetcodeStrongPasswordChecker
             bool haveAtLeast3RepeatingCharsInString = false;
             int numRepeating = 0;
 
-            for (int i = 0; i < len; i++)
+            for (int i = 0; i < s.Length; i++)
             {
                 var ch = s[i];
 
@@ -97,7 +97,8 @@ namespace LeetcodeStrongPasswordChecker
         static void Main(string[] args)
         {
             var x = new Solution();
-            int score = x.StrongPasswordChecker("aaa");
+            int score = 0;
+            score = x.StrongPasswordChecker("aaa");
             Debug.Assert(score == 3);
 
             score = x.StrongPasswordChecker("aaa123");
@@ -108,6 +109,7 @@ namespace LeetcodeStrongPasswordChecker
 
             score = x.StrongPasswordChecker("ABABABABABABABABABAB1");
             Debug.Assert(score==2);
+            
         }
     }
 }
