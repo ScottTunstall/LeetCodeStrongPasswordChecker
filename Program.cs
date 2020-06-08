@@ -41,7 +41,7 @@ namespace LeetcodeStrongPasswordChecker
                     points += (repeating+1) /3;
                     numRepeating += repeating+1;
 
-                    i += repeating+1;
+                    i += repeating; // the i++ will bump this to correct index 
                 }
             }
 
@@ -102,14 +102,18 @@ namespace LeetcodeStrongPasswordChecker
             Debug.Assert(score == 3);
 
             score = x.StrongPasswordChecker("aaa123");
-            Debug.Assert(score==1);
-                                            
+            Debug.Assert(score == 1);
+
             score = x.StrongPasswordChecker("aaaaaaaaaaaaaaaaaaaaa");
-            Debug.Assert(score==7);
+            Debug.Assert(score == 7);
 
             score = x.StrongPasswordChecker("ABABABABABABABABABAB1");
-            Debug.Assert(score==2);
-            
+            Debug.Assert(score == 2);
+
+            score = x.StrongPasswordChecker("aaa111");
+            Debug.Assert(score == 2);
+
+
         }
     }
 }
